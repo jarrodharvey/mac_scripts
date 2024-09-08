@@ -1,7 +1,7 @@
 -- Loop to repeat every 6 minutes
 repeat
     -- Log: Saving current active application
-    do shell script "echo 'Saving the current active application...'"
+    log "Saving the current active application..."
 
     -- Save the current active application
     tell application "System Events"
@@ -9,7 +9,7 @@ repeat
     end tell
 
     -- Log: Switching workspace
-    do shell script "echo 'Switching to the workspace using Cmd + Ctrl + Shift + G...'"
+    log "Switching to the workspace using Cmd + Ctrl + Shift + G..."
 
     -- Focus on the workspace using "Cmd + Ctrl + Shift + G"
     tell application "System Events"
@@ -19,7 +19,7 @@ repeat
     delay 1 -- Adjust the delay if needed to wait for workspace switch
 
     -- Log: Pressing the tilde key (~)
-    do shell script "echo 'Pressing the tilde (~) key...'"
+    log "Pressing the tilde (~) key..."
 
     -- Press the tilde key (~)
     tell application "System Events"
@@ -29,13 +29,13 @@ repeat
     delay 0.5 -- Short delay if necessary
 
     -- Log: Returning to the original active application
-    do shell script "echo 'Returning to the original active application...'"
+    log "Returning to the original active application..."
 
     -- Return to the original active window/application
     tell application activeApp to activate
 
     -- Log: Waiting for 6 minutes
-    do shell script "echo 'Waiting for 6 minutes before next run...'"
+    log "Waiting for 6 minutes before next run..."
 
     -- Wait for 6 minutes (360 seconds)
     delay 360

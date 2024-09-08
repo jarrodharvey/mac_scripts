@@ -1,0 +1,1 @@
+copy "Hello World!" to stdout
